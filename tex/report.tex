@@ -1,0 +1,27 @@
+% !TeX program = xelatex
+\documentclass[a4paper,14pt,russian]{extreport}
+\input{preambule.inc}
+\hypersetup{
+  pdftitle={Исследование нейросетевых методов обнаружения повторного JPEG-сжатия изображений},
+  pdfauthor={Гиричев М. С.}
+}
+\begin{document}
+\hypersetup{pageanchor=false}
+\include{00_title}
+\setcounter{page}{2}
+\hypersetup{pageanchor=true}
+\renewcommand{\contentsname}{\centerline{СОДЕРЖАНИЕ}}
+\phantomsection
+\pdfbookmark[0]{СОДЕРЖАНИЕ}{toc}
+\tableofcontents
+\include{10_introduction}
+\include{20_analysis}
+\include{30_design}
+\include{40_implementation}
+\include{50_research}
+\include{60_conclusion}
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
+\printbibliography[title={СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}]
+\end{document}

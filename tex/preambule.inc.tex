@@ -1,0 +1,58 @@
+% Оформление адаптировано из course-work-CG-BMSTU-5-sem.
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage{cmap}
+  \usepackage[T2A,T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \renewcommand{\rmdefault}{Tempora-TLF}
+\else
+  \usepackage{fontspec}
+  \IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{TeX Gyre Termes}}
+  \IfFontExistsTF{Courier New}{\setmonofont{Courier New}}{\setmonofont{DejaVu Sans Mono}}
+\fi
+\usepackage[main=russian,english]{babel}
+\usepackage[left=30mm,right=10mm,top=20mm,bottom=20mm]{geometry}
+\usepackage{microtype}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{indentfirst}
+\setlength{\parindent}{12.5mm}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\usepackage{graphicx,float}
+\usepackage{amsmath,amssymb}
+\numberwithin{equation}{chapter}
+\usepackage{tabularx,booktabs}
+\usepackage{enumitem}
+\setlist{topsep=4pt,itemsep=0pt,parsep=0pt}
+\setlist[itemize]{label=---,leftmargin=\parindent}
+\setlist[enumerate]{label=\arabic*),leftmargin=\parindent}
+\usepackage{titlesec,tocloft}
+\titleformat{\chapter}[block]{\large\bfseries\centering}{\thechapter}{0.5em}{}
+\titleformat{\section}{\large\bfseries\raggedright}{\thesection}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries\raggedright}{\thesubsection}{0.5em}{}
+\titlespacing*{\chapter}{0pt}{-22pt}{14pt}
+\titlespacing*{\section}{0pt}{12pt}{8pt}
+\titlespacing*{\subsection}{0pt}{10pt}{6pt}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2}
+\setlength{\cftbeforetoctitleskip}{-25pt}
+\renewcommand{\cfttoctitlefont}{\large\bfseries}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\setlength{\cftbeforechapskip}{5pt}
+\usepackage[singlelinecheck=false]{caption}
+\DeclareCaptionLabelSeparator{emdash}{~---~}
+\captionsetup{labelsep=emdash}
+\captionsetup[figure]{justification=centering,name=Рисунок}
+\captionsetup[table]{justification=raggedright}
+\usepackage{csquotes}
+\usepackage[backend=biber,style=gost-numeric,language=auto,sorting=none,maxnames=4,doi=false,isbn=false,url=true,dashed=false]{biblatex}
+\addbibresource{ref-lib.bib}
+\usepackage{xurl}
+\urlstyle{same}
+\usepackage[unicode,hidelinks]{hyperref}
+\usepackage{bookmark}
+\AtBeginBibliography{\small\singlespacing}
+\setlength{\bibitemsep}{7pt}
+\pagestyle{plain}
