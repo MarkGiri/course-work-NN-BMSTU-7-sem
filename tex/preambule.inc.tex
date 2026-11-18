@@ -21,6 +21,9 @@
 \clubpenalty=10000
 \widowpenalty=10000
 \usepackage{graphicx,float}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\textfraction}{0.12}
+\renewcommand{\floatpagefraction}{0.80}
 \usepackage{amsmath,amssymb}
 \numberwithin{equation}{chapter}
 \usepackage{tabularx,booktabs}
@@ -35,7 +38,7 @@
 \titlespacing*{\chapter}{0pt}{-22pt}{14pt}
 \titlespacing*{\section}{0pt}{12pt}{8pt}
 \titlespacing*{\subsection}{0pt}{10pt}{6pt}
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{1}
 \setcounter{secnumdepth}{2}
 \setlength{\cftbeforetoctitleskip}{-25pt}
 \renewcommand{\cfttoctitlefont}{\large\bfseries}
@@ -46,6 +49,11 @@
 \captionsetup{labelsep=emdash}
 \captionsetup[figure]{justification=centering,name=Рисунок}
 \captionsetup[table]{justification=raggedright}
+\usepackage{listings}
+\lstset{basicstyle=\footnotesize\ttfamily,columns=fullflexible,keepspaces=true,
+        showstringspaces=false,breaklines=true,frame=single,framesep=4pt,
+        captionpos=t,aboveskip=8pt,belowskip=6pt}
+\AtBeginDocument{\renewcommand{\lstlistingname}{Листинг}}
 \usepackage{csquotes}
 \usepackage[backend=biber,style=gost-numeric,language=auto,sorting=none,maxnames=4,doi=false,isbn=false,url=true,dashed=false]{biblatex}
 \addbibresource{ref-lib.bib}

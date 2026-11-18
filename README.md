@@ -53,4 +53,4 @@ jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.kernel
 ./build.sh
 ```
 
-Скрипт собирает `tex/report.pdf` с помощью Tectonic и совместимого Biber либо TeX Live с XeLaTeX и latexmk. Для явного выбора Biber предусмотрена переменная `BIBER_BIN`. Лист задания расположен после титульного листа. Результаты эксперимента пока вынесены в отдельные заметки. [Образец оформления](https://github.com/MarkGiri/course-work-CG-BMSTU-5-sem/tree/main/tex) · [Образец листа задания](https://github.com/MarkGiri/course-work-DB-BMSTU-6-sem/tree/main/report/tex)
+Скрипт собирает `tex/report.pdf` с помощью Tectonic и совместимого Biber либо TeX Live с XeLaTeX и latexmk. Для явного выбора Biber предусмотрена переменная `BIBER_BIN`. Лист задания расположен после титульного листа. Методика, результаты и границы применимости моделей приведены в исследовательском разделе. [Образец оформления](https://github.com/MarkGiri/course-work-CG-BMSTU-5-sem/tree/main/tex) · [Образец листа задания](https://github.com/MarkGiri/course-work-DB-BMSTU-6-sem/tree/main/report/tex)

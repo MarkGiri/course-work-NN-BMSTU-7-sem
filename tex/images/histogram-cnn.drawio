@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="histogram-cnn" name="Страница 1">
+    <mxGraphModel dx="850" dy="550" grid="1" gridSize="10" page="0" adaptiveColors="auto">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="h" parent="1" value="Девять гистограмм&lt;br&gt;9 × 123" vertex="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=3;fontFamily=Arial;fontSize=19;fontColor=#152633;strokeColor=#44545e;strokeWidth=1.5;fillColor=#ffffff;rounded=1;arcSize=18;fillColor=#eaf1f4;">
+          <mxGeometry as="geometry" x="10" y="10" width="228" height="58" />
+        </mxCell>
+        <mxCell id="s" parent="1" value="Свёртка и ReLU&lt;br&gt;Усреднение → 16 × 61" vertex="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=3;fontFamily=Arial;fontSize=19;fontColor=#152633;strokeColor=#44545e;strokeWidth=1.5;fillColor=#ffffff;">
+          <mxGeometry as="geometry" x="276" y="10" width="228" height="58" />
+        </mxCell>
+        <mxCell id="s2" parent="1" value="Свёртка и ReLU&lt;br&gt;Усреднение → 32 × 30" vertex="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=3;fontFamily=Arial;fontSize=19;fontColor=#152633;strokeColor=#44545e;strokeWidth=1.5;fillColor=#ffffff;">
+          <mxGeometry as="geometry" x="542" y="10" width="228" height="58" />
+        </mxCell>
+        <mxCell id="vec" parent="1" value="Развёртка в вектор&lt;br&gt;960 значений" vertex="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=3;fontFamily=Arial;fontSize=19;fontColor=#152633;strokeColor=#44545e;strokeWidth=1.5;fillColor=#ffffff;">
+          <mxGeometry as="geometry" x="542" y="100" width="228" height="58" />
+        </mxCell>
+        <mxCell id="q" parent="1" value="Таблица квантования&lt;br&gt;64 значения" vertex="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=3;fontFamily=Arial;fontSize=19;fontColor=#152633;strokeColor=#44545e;strokeWidth=1.5;fillColor=#ffffff;rounded=1;arcSize=18;fillColor=#eaf1f4;">
+          <mxGeometry as="geometry" x="10" y="100" width="228" height="58" />
+        </mxCell>
+        <mxCell id="merge" parent="1" value="Объединение векторов&lt;br&gt;960 + 64 = 1 024" vertex="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=3;fontFamily=Arial;fontSize=19;fontColor=#152633;strokeColor=#44545e;strokeWidth=1.5;fillColor=#ffffff;">
+          <mxGeometry as="geometry" x="276" y="100" width="228" height="58" />
+        </mxCell>
+        <mxCell id="out" parent="1" value="Полносвязные слои&lt;br&gt;1 024 → 32 → 2" vertex="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=3;fontFamily=Arial;fontSize=19;fontColor=#152633;strokeColor=#44545e;strokeWidth=1.5;fillColor=#ffffff;">
+          <mxGeometry as="geometry" x="276" y="190" width="228" height="58" />
+        </mxCell>
+        <mxCell id="h-s" source="h" target="s" parent="1" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#394954;strokeWidth=1.6;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="s-s2" source="s" target="s2" parent="1" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#394954;strokeWidth=1.6;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="s2-vec" source="s2" target="vec" parent="1" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#394954;strokeWidth=1.6;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="vec-merge" source="vec" target="merge" parent="1" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#394954;strokeWidth=1.6;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="q-merge" source="q" target="merge" parent="1" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#394954;strokeWidth=1.6;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="merge-out" source="merge" target="out" parent="1" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#394954;strokeWidth=1.6;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
