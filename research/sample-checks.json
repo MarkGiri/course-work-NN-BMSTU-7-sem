@@ -2,6 +2,6 @@
   "test_pairs_identical_bytes": 3,
   "test_pairs_identical_pixels": 83,
   "test_files_with_seen_features": 11,
-  "accuracy_fresh_features": 0.8043696131489276,
+  "accuracy_fresh_features": 0.8073762277009421,
   "train_double_same_table_id": 17
 }

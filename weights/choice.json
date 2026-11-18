@@ -1,5 +1,5 @@
 {
-  "file": "CNN-29.pt",
+  "file": "60-epochs/CNN-43.pt",
   "criterion": "minimum validation cross-entropy",
   "manifest_sha256": "54699e6c9a82400fae925708cda2d735d7b23650a31fd3947b07b65687d1cd45"
 }

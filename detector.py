@@ -45,13 +45,14 @@ def features(source):
 
 
 class HistogramCNN(nn.Module):
-    def __init__(self):
+    def __init__(self, channels=(16, 32)):
         super().__init__()
+        first, second = channels
         self.convolutions = nn.Sequential(
-            nn.Conv1d(9, 16, 5, padding=2), nn.ReLU(), nn.AvgPool1d(2),
-            nn.Conv1d(16, 32, 3, padding=1), nn.ReLU(), nn.AvgPool1d(2),
+            nn.Conv1d(9, first, 5, padding=2), nn.ReLU(), nn.AvgPool1d(2),
+            nn.Conv1d(first, second, 3, padding=1), nn.ReLU(), nn.AvgPool1d(2),
         )
-        self.classifier = nn.Sequential(nn.Linear(32 * 30 + 64, 32), nn.ReLU(), nn.Linear(32, 2))
+        self.classifier = nn.Sequential(nn.Linear(second * 30 + 64, 32), nn.ReLU(), nn.Linear(32, 2))
 
     def forward(self, x):
         histograms = x[:, :N_HIST].reshape(-1, 9, N_BINS)
@@ -59,12 +60,16 @@ class HistogramCNN(nn.Module):
         return self.classifier(torch.cat((patterns, x[:, N_HIST:]), dim=1))
 
 
-def make_model(name):
+def make_model(name, dropout=0.0, channels=(16, 32)):
     if name == "CNN":
-        return HistogramCNN()
+        return HistogramCNN(channels)
     if name == "MLP":
-        return nn.Sequential(nn.Linear(N_HIST + 64, 64), nn.ReLU(),
-                             nn.Linear(64, 32), nn.ReLU(), nn.Linear(32, 2))
+        layers = []
+        for inputs, outputs in ((N_HIST + 64, 64), (64, 32)):
+            layers.extend([nn.Linear(inputs, outputs), nn.ReLU()])
+            if dropout:
+                layers.append(nn.Dropout(dropout))
+        return nn.Sequential(*layers, nn.Linear(32, 2))
     raise ValueError(f"неизвестная архитектура {name}")
 
 
@@ -73,7 +78,7 @@ def load_detector(weights=None):
         choice = json.loads((ROOT / "weights" / "choice.json").read_text())
         weights = ROOT / "weights" / choice["file"]
     saved = torch.load(weights, map_location="cpu", weights_only=True)
-    model = make_model(saved["model"])
+    model = make_model(saved["model"], dropout=saved.get("dropout", 0.0))
     model.load_state_dict(saved["state"])
     return model.eval(), saved["mean"], saved["scale"]
 

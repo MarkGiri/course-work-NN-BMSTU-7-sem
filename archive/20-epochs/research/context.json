@@ -1,0 +1,33 @@
+{
+  "chip": "Apple M4 Pro",
+  "macos": "26.5",
+  "python": "3.12.14",
+  "device": "mps",
+  "versions": {
+    "torch": "2.15.0",
+    "Pillow": "13.0.0",
+    "numpy": "2.5.5",
+    "scipy": "1.18.1",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.9.1"
+  },
+  "manifest_sha256": "54699e6c9a82400fae925708cda2d735d7b23650a31fd3947b07b65687d1cd45",
+  "threshold": 0.5,
+  "pairs_per_split": {
+    "train": 15000,
+    "val": 2500,
+    "test": 2500
+  },
+  "pixel_sha_cross_split": 0,
+  "pair_thumb_mae": 0.10783203125,
+  "shuffled_thumb_mae": 72.56794921875,
+  "first_table_match": 1.0,
+  "table_only_accuracy": 0.5122,
+  "cnn_minus_mlp_accuracy": 0.0172,
+  "paired_95ci": [
+    0.0086,
+    0.026404999999999974
+  ],
+  "selected_model": "CNN",
+  "selected_seed": 29
+}
