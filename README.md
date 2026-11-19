@@ -8,7 +8,8 @@
 - [Выполненный ноутбук с обучением и измерениями](train.ipynb)
 - [Таблицы, предсказания и графики](research/)
 - [Сравнение исходных и итоговых весов](research/protocol-comparison.csv) · [Архив исходного опыта на 20 эпох](archive/20-epochs/)
-- [Пояснительная записка с листом задания](tex/report.pdf)
+- [Пояснительная записка с приложением А](tex/report.pdf)
+- Презентация к защите в [PDF](tex/presentation.pdf) и [PowerPoint](tex/presentation.pptx) · [Текст выступления по слайдам](docs/defense-speech.md)
 - [Лицензия MIT](LICENSE)
 
 ## Запуск программы
